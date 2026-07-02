@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DSA Battle Arena</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>⚔️ CodeArena</h1>
+
+<p style="text-align:center;margin-bottom:20px;">
+Compete. Code. Conquer.
+</p>
+
+<div class="instructions">
+
+<h3>How to Play</h3>
+
+<ol>
+
+<li>Create or Join a Room</li>
+
+<li>Wait for your opponent</li>
+
+<li>Solve the same coding problem</li>
+
+<li>Submit before your opponent</li>
+
+<li>Win the battle 🏆</li>
+
+</ol>
+
+</div>
+
+        <div class="card">
+
+            <input
+                id="userId"
+                type="text"
+                placeholder="Enter Your Name"
+            >
+
+            <input
+                id="roomId"
+                type="text"
+                placeholder="Enter Room ID"
+            >
+
+            <button id="createBtn">
+
+                Create Room
+
+            </button>
+
+            <button id="joinBtn">
+
+                Join Room
+
+            </button>
+
+            <h2 id="status">
+
+                Waiting...
+
+            </h2>
+
+            <h1 id="countdown"></h1>
+            <h2 id="battleTimer"></h2>
+
+            <h2>Problem</h2>
+
+<h3 id="problemTitle"></h3>
+
+<p id="problemDescription"></p>
+
+<label for="language"><strong>Language</strong></label>
+
+<select id="language">
+
+    <option>C++</option>
+
+    <option>Java</option>
+
+    <option>Python</option>
+
+    <option>JavaScript</option>
+
+</select>
+
+            <textarea
+                id="editor"
+                placeholder="Write your code here..."
+            ></textarea>
+
+            <br><br>
+
+            <button id="submitBtn">
+
+                Submit Code
+
+            </button>
+
+            <button id="playAgainBtn" style="display:none;">
+
+    Play Again
+
+</button>
+
+<div id="winnerCard" class="winner-card">
+
+    <h1 id="resultTitle"></h1>
+
+    <h2 id="winnerName"></h2>
+
+    <p id="resultMessage"></p>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+<footer>
+
+Built with ❤️ by Shekhar Gupta
+
+</footer>
