@@ -33,6 +33,9 @@ const resultMessage = document.getElementById("resultMessage");
 const language = document.getElementById("language");
 
 const battleSection = document.getElementById("battleSection");
+
+const waitingSection = document.getElementById("waitingSection");
+const waitingRoomId = document.getElementById("waitingRoomId");
 // ===============================
 // SOCKET EVENTS
 // ===============================
@@ -59,7 +62,9 @@ socket.on("joinedRoom", (data) => {
 
     statusText.innerText = "Joined Room Successfully";
 
-    battleSection.style.display = "block";
+    waitingSection.style.display = "block";
+
+    waitingRoomId.innerText = roomIdInput.value;
 
 });
 
@@ -77,6 +82,10 @@ socket.on("countdown", (count) => {
 
 
 socket.on("battleStarted", () => {
+
+    waitingSection.style.display = "none";
+
+    battleSection.style.display = "block";
 
     countdownText.innerText = "🚀 START!";
 

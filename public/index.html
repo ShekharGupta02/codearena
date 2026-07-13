@@ -19,43 +19,35 @@
 
         <h1 class="logo">⚔️ CodeArena</h1>
 
-<p class="tagline">
-      Real-time coding battles between programmers.
-</p>
+        <p class="tagline">
+            Real-time coding battles between programmers.
+        </p>
 
-<div class="instructions">
+        <div class="instructions">
 
-<h3>How to Play</h3>
+            <h3>How to Play</h3>
 
-<ol>
+            <ol>
 
-<li>Create or Join a Room</li>
+                <li>Create or Join a Room</li>
 
-<li>Wait for your opponent</li>
+                <li>Wait for your opponent</li>
 
-<li>Solve the same coding problem</li>
+                <li>Solve the same coding problem</li>
 
-<li>Submit before your opponent</li>
+                <li>Submit before your opponent</li>
 
-<li>Win the battle 🏆</li>
+                <li>Win the battle 🏆</li>
 
-</ol>
+            </ol>
 
-</div>
+        </div>
 
         <div class="home-card">
 
-            <input
-                id="userId"
-                type="text"
-                placeholder="Enter your Name"
-            >
+            <input id="userId" type="text" placeholder="Enter your Name">
 
-            <input
-                id="roomId"
-                type="text"
-                placeholder="Room ID"
-            >
+            <input id="roomId" type="text" placeholder="Room ID">
 
             <button id="createBtn">
 
@@ -68,65 +60,73 @@
                 Join Room
 
             </button>
-<div id="battleSection" style="display:none">
-            <h2 id="status">
 
-                Waiting...
+            <div id="waitingSection" style="display:none;">
 
-            </h2>
+                <h2>Waiting for Opponent...</h2>
 
-            <h1 id="countdown"></h1>
-            <h2 id="battleTimer"></h2>
+                <p>Share this Room ID with your friend.</p>
 
-            <h2>Problem</h2>
+                <h3 id="waitingRoomId"></h3>
 
-<h3 id="problemTitle"></h3>
+            </div>
 
-<p id="problemDescription"></p>
+            <div id="battleSection" style="display:none;">
+                <h2 id="status">
 
-<label for="language"><strong>Language</strong></label>
+                    Waiting...
 
-<select id="language">
+                </h2>
 
-    <option>C++</option>
+                <h1 id="countdown"></h1>
+                <h2 id="battleTimer"></h2>
 
-    <option>Java</option>
+                <h2>Problem</h2>
 
-    <option>Python</option>
+                <h3 id="problemTitle"></h3>
 
-    <option>JavaScript</option>
+                <p id="problemDescription"></p>
 
-</select>
+                <label for="language"><strong>Language</strong></label>
 
-            <textarea
-                id="editor"
-                placeholder="Write your code here..."
-            ></textarea>
+                <select id="language">
 
-            <br><br>
+                    <option>C++</option>
 
-            <button id="submitBtn">
+                    <option>Java</option>
 
-                Submit Code
+                    <option>Python</option>
 
-            </button>
+                    <option>JavaScript</option>
 
-            <button id="playAgainBtn" style="display:none;">
+                </select>
 
-    Play Again
+                <textarea id="editor" placeholder="Write your code here..."></textarea>
 
-</button>
+                <br><br>
 
-<div id="winnerCard" class="winner-card">
+                <button id="submitBtn">
 
-    <h1 id="resultTitle"></h1>
+                    Submit Code
 
-    <h2 id="winnerName"></h2>
+                </button>
 
-    <p id="resultMessage"></p>
+                <button id="playAgainBtn" style="display:none;">
 
-</div>
-</div>
+                    Play Again
+
+                </button>
+
+                <div id="winnerCard" class="winner-card">
+
+                    <h1 id="resultTitle"></h1>
+
+                    <h2 id="winnerName"></h2>
+
+                    <p id="resultMessage"></p>
+
+                </div>
+            </div>
 
         </div>
 
@@ -142,6 +142,6 @@
 
 <footer>
 
-Built with ❤️ by Shekhar Gupta
+    Built with ❤️ by Shekhar Gupta
 
 </footer>
