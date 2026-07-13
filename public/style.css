@@ -10,16 +10,16 @@ body{
     background:#0f172a;
     color:white;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     min-height:100vh;
+
+    padding:30px;
+
 }
 
 .container{
 
-    width:900px;
+    width:95%;
+    max-width:900px;
 
     background:#1e293b;
 
@@ -28,6 +28,8 @@ body{
     border-radius:15px;
 
     box-shadow:0 0 25px rgba(0,0,0,.4);
+
+    margin:30px auto;
 
 }
 
@@ -218,5 +220,47 @@ margin-top:30px;
 text-align:center;
 
 opacity:.7;
+
+}
+
+.logo{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.tagline{
+    text-align:center;
+    color:#94a3b8;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+@media (max-width: 768px){
+
+    .container{
+        padding:20px;
+    }
+
+    textarea{
+        height:220px;
+    }
+
+    button{
+        width:100%;
+        margin:8px 0;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    #battleTimer{
+        font-size:24px;
+    }
+
+    #countdown{
+        font-size:42px;
+    }
 
 }

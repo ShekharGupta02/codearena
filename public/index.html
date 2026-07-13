@@ -17,10 +17,10 @@
 
     <div class="container">
 
-        <h1>⚔️ CodeArena</h1>
+        <h1 class="logo">⚔️ CodeArena</h1>
 
-<p style="text-align:center;margin-bottom:20px;">
-Compete. Code. Conquer.
+<p class="tagline">
+      Real-time coding battles between programmers.
 </p>
 
 <div class="instructions">
@@ -43,18 +43,18 @@ Compete. Code. Conquer.
 
 </div>
 
-        <div class="card">
+        <div class="home-card">
 
             <input
                 id="userId"
                 type="text"
-                placeholder="Enter Your Name"
+                placeholder="Enter your Name"
             >
 
             <input
                 id="roomId"
                 type="text"
-                placeholder="Enter Room ID"
+                placeholder="Room ID"
             >
 
             <button id="createBtn">
@@ -68,7 +68,7 @@ Compete. Code. Conquer.
                 Join Room
 
             </button>
-
+<div id="battleSection" style="display:none">
             <h2 id="status">
 
                 Waiting...
@@ -125,6 +125,7 @@ Compete. Code. Conquer.
 
     <p id="resultMessage"></p>
 
+</div>
 </div>
 
         </div>

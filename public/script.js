@@ -31,6 +31,8 @@ const resultTitle = document.getElementById("resultTitle");
 const resultMessage = document.getElementById("resultMessage");
 
 const language = document.getElementById("language");
+
+const battleSection = document.getElementById("battleSection");
 // ===============================
 // SOCKET EVENTS
 // ===============================
@@ -56,6 +58,8 @@ socket.on("joinedRoom", (data) => {
     console.log(data);
 
     statusText.innerText = "Joined Room Successfully";
+
+    battleSection.style.display = "block";
 
 });
 
