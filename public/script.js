@@ -5,6 +5,12 @@
 const socket = io();
 
 // ===============================
+// MONACO EDITOR
+// ===============================
+
+let editor;
+
+// ===============================
 // HTML ELEMENTS
 // ===============================
 
@@ -269,5 +275,46 @@ submitBtn.addEventListener("click", () => {
 playAgainBtn.addEventListener("click", () => {
 
     location.reload();
+
+});
+
+// ===============================
+// MONACO EDITOR INITIALIZATION
+// ===============================
+
+require.config({
+    paths: {
+        vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs"
+    }
+});
+
+require(["vs/editor/editor.main"], function () {
+
+    editor = monaco.editor.create(document.getElementById("editor"), {
+
+        value:
+`#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    cout << "Hello CodeArena!";
+
+    return 0;
+}
+`,
+
+        language: "cpp",
+
+        theme: "vs-dark",
+
+        automaticLayout: true,
+
+        minimap: {
+            enabled: false
+        }
+
+    });
 
 });
