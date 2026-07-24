@@ -10,6 +10,45 @@ const socket = io();
 
 let editor;
 
+const starterTemplates = {
+
+    cpp: `#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    return 0;
+}
+`,
+
+    java: `public class Main {
+
+    public static void main(String[] args) {
+
+    }
+
+}
+`,
+
+    python: `def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+`,
+
+    javascript: `function main() {
+
+}
+
+main();
+`
+
+};
+
+let currentTemplate = starterTemplates.cpp;
+
 // ===============================
 // HTML ELEMENTS
 // ===============================
@@ -292,18 +331,9 @@ require(["vs/editor/editor.main"], function () {
 
     editor = monaco.editor.create(document.getElementById("editor"), {
 
-        value:
-`#include <iostream>
+       
+    value: starterTemplates.cpp,
 
-using namespace std;
-
-int main() {
-
-    cout << "Hello CodeArena!";
-
-    return 0;
-}
-`,
 
         language: "cpp",
 
@@ -317,4 +347,47 @@ int main() {
 
     });
 
+    language.addEventListener("change", () => {
+    console.log(language.value);
+    const selectedLanguage = language.value;
+
+    let monacoLanguage = "cpp";
+
+    switch (selectedLanguage) {
+
+        case "Java":
+            monacoLanguage = "java";
+            break;
+
+        case "Python":
+            monacoLanguage = "python";
+            break;
+
+        case "JavaScript":
+            monacoLanguage = "javascript";
+            break;
+
+        default:
+            monacoLanguage = "cpp";
+    }
+
+    const model = editor.getModel();
+
+console.log("Before:", model.getLanguageId());
+
+monaco.editor.setModelLanguage(model, monacoLanguage);
+
+if (editor.getValue() === currentTemplate) {
+
+    editor.setValue(starterTemplates[monacoLanguage]);
+
+    currentTemplate = starterTemplates[monacoLanguage];
+
+}
+
+console.log("After:", model.getLanguageId());
+
 });
+
+});
+
