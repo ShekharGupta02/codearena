@@ -305,7 +305,9 @@ submitBtn.addEventListener("click", () => {
 
     userId,
 
-    language: language.value
+    language: language.value,
+
+    code: editor.getValue()
 
 });
 

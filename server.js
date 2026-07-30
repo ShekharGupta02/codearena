@@ -181,7 +181,7 @@ if (room.players.length === 2) {
 // SUBMIT CODE
 // ================================
 
-socket.on("submitCode", ({ roomId, userId }) => {
+socket.on("submitCode", ({ roomId, userId, language, code }) => {
 
     const room = rooms.get(roomId);
 
@@ -189,11 +189,16 @@ socket.on("submitCode", ({ roomId, userId }) => {
         return;
     }
 
+    console.log("========== SUBMISSION ==========");
+console.log("Language:", language);
+console.log(code);
+
     // Winner already declared
     if (room.winner) {
         return;
     }
-
+    
+    
     // First player becomes winner
     room.winner = userId;
 
